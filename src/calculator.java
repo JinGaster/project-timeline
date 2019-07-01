@@ -7,22 +7,22 @@ public class calculator {
 		boolean calc = true;
 		while(calc == true) {
 			System.out.println("Insert your first number, the operation, then the second number.");
-			int first = scan.nextInt();
+			double first = scan.nextDouble();
 			String operation = scan.next();			
-			int second = scan.nextInt();
+			double second = scan.nextDouble();
 			if(operation.equals("exit")) {
 				calc = false;
 			}
-			else if(operation.equals("+") && operation.equalsIgnoreCase("add")) {
+			else if(operation.equals("+") || operation.equalsIgnoreCase("add")) {
 				System.out.println(first+second);
 			}
-			else if(operation.equals("-") && operation.equalsIgnoreCase("subtract")) {
+			else if(operation.equals("-") || operation.equalsIgnoreCase("subtract")) {
 				System.out.println(first-second);
 			}
-			else if(operation.equals("*") && operation.equalsIgnoreCase("multiply")) {
+			else if(operation.equals("*") || operation.equalsIgnoreCase("multiply")) {
 				System.out.println(first*second);
 			}
-			else if(operation.equals("/") && operation.equalsIgnoreCase("divide")) {
+			else if(operation.equals("/") || operation.equalsIgnoreCase("divide")) {
 				System.out.println(first/second);
 			}
 			else {
