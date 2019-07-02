@@ -56,7 +56,7 @@ public class rockPaperScissors {
 				System.out.println("It's a tie!");
 			}
 		}
-
+		scan.close();
 	}
 
 }

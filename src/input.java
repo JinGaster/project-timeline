@@ -12,5 +12,5 @@ public class input {
 		System.out.println("Your age is "+age+".");
 		System.out.println("Year born is "+(2019-age)+".");
 	}
-
+	scan.close();
 }
