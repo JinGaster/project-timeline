@@ -18,10 +18,18 @@ public class equilateralTriangle {
 		//			}
 		//			System.out.println();
 		//			}
-		for(int x = 0; x < 17; x++) {
-			System.out.print("X");
+		for(int z = 0; z < 15; z++) {
+			for(int y = 0; y < z; y++) {
+				System.out.print(" ");
+			}
+			for(int x = 0; x < (15-z); x++) {
+				System.out.print("X");
+			}
+			for(int a = 15; a > z; a--) {
+				System.out.print("X");
+			}
+			System.out.println();
 		}
-		for(int y = 0; )
 	}
 
 }
