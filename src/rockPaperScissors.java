@@ -21,12 +21,39 @@ public class rockPaperScissors {
 			else if(computer == 2) {
 				comChoice = "scissors";
 			}
+			System.out.println("The computer chose "+comChoice+".");
 			if(choice.equalsIgnoreCase("rock") && comChoice.equals("rock")) {
 				System.out.println("It's a tie!");
 			}
 			else if(choice.equalsIgnoreCase("rock") && comChoice.equals("paper")) {
 				System.out.println("Paper beats rock, you lose!");
 				bool = false;
+			}
+			else if(choice.equalsIgnoreCase("rock") && comChoice.equals("scissors")) {
+				System.out.println("Rock beats scissors, you win!");
+				bool = false;
+			}
+			else if(choice.equalsIgnoreCase("paper") && comChoice.equals("rock")) {
+				System.out.println("Paper beats rock, you win!");
+				bool = false;
+			}
+			else if(choice.equalsIgnoreCase("paper") && comChoice.equals("paper")) {
+				System.out.println("It's a tie!");
+			}
+			else if(choice.equalsIgnoreCase("paper") && comChoice.equals("scissors")) {
+				System.out.println("Scissors beats paper, you lose!");
+				bool = false;
+			}
+			else if(choice.equalsIgnoreCase("scissors") && comChoice.equals("rock")) {
+				System.out.println("Rock beats scissors, you lose!");
+				bool = false;
+			}
+			else if(choice.equalsIgnoreCase("scissors") && comChoice.equals("paper")) {
+				System.out.println("Scissors beats paper, you win!");
+				bool = false;
+			}
+			else if(choice.equalsIgnoreCase("scissors") && comChoice.equals("scissors")) {
+				System.out.println("It's a tie!");
 			}
 		}
 
