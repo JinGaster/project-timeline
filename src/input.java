@@ -11,6 +11,6 @@ public class input {
 		int age = scan.nextInt();
 		System.out.println("Your age is "+age+".");
 		System.out.println("Year born is "+(2019-age)+".");
+		scan.close();
 	}
-	scan.close();
 }
