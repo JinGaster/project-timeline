@@ -8,6 +8,8 @@ public class rpgGame {
 		Random rand = new Random();
 		String[] inv = new String[10];
 		int i = 0; //i is number of items in inv.
+		int HP = 90;
+		//put all preps behind
 		int rpsComNum = rand.nextInt(3);
 		String rpsComChoice = null;
 		if(rpsComNum == 0) {
@@ -65,8 +67,8 @@ public class rpgGame {
 		System.out.println("* Oh. The machine shut down. It's out of batteries.");
 		System.out.println("* At least you know the computer chose "+rpsComChoice+", so I guess you can figure it out yourself.");
 		System.out.println("* You think about going downstairs to get more batteries, but you also feel like watching more m e e m s.");
-		System.out.println("* What do you do? [GET BATTEREIES] [MEMES]");
-		String firstChoice = scan.next();
+		System.out.print("* What do you do? [GET BATTERIES] [MEMES]"); //punishment line is next to this
+		String firstChoice = scan.nextLine();
 		if(firstChoice.equalsIgnoreCase("GET BATTERIES")) {
 			System.out.println("* You decide to go downstairs.");
 		}
@@ -80,7 +82,7 @@ public class rpgGame {
 		}
 		else if(firstChoice.equalsIgnoreCase("TAKE BATTERIES")) {
 			System.out.println("* You take the dead batteries from the machine. You probably don't need them anymore, but you decided to take them anyway.");
-			System.out.println("* You got 2 (dead) E-Cell Batteries.");
+			System.out.println("* (You got 2 (dead) E-Cell Batteries.)");
 			inv[i] = "Dead Batteries";
 			i++;
 			System.out.println("* You go downstairs.");
@@ -102,6 +104,11 @@ public class rpgGame {
 		System.out.println("* Before you go back inside, your dog opens up a rift in space and time and goes in.");
 		System.out.println("* Oh well. Guess that sucks. You go back inside your house.");
 		System.out.println("* You go to your kitchen, since you're (probably) hungry.");
+		
+		System.out.println("* Always remember that after a long segment of text, it may prompt you to type anything to go on.");
+		String nextSection1c1 = scan.next();
+		System.out.println("Continuing to next section.");
+		
 		System.out.println("* You try to open the refrigerator.");
 		System.out.println("* You miss.");
 		System.out.println("* You try to open the refrigerator again. This time it opens. You get a drink.");
@@ -111,22 +118,103 @@ public class rpgGame {
 		System.out.println("* A feeling of guilt surrounds you. Oh well.");
 		System.out.println("* You grab the box next to the fridge. You get...");
 		System.out.println("* A   S T A L E   C R A C K E R .");
-		System.out.println("* Stale Cracker has been added to your inventory.");
+		System.out.println("* (Stale Cracker has been added to your inventory!)");
 		inv[i] = "Stale Cracker";
 		i++;
 		System.out.println("* For a reason that would take way to long to think of, you decide to go outside.");
+		
+		System.out.println("* Type something to continue.");
+		String nextSection2c1 = scan.next();
+		System.out.println("Continuing to next section.");
+		
 		System.out.println("* Among the hills, you see a cave. You grab your iron pickaxe and walk inside.");
 		System.out.println("* To find diamonds, it's always recommended to dig straight down. So you do that.");
 		System.out.println("* Uh oh. You're stuck.");
-		System.out.println("* And, since the one who created this was forced by hogan luckins for the MC to fall into an ice cube with like a pond with a 2ft diameter, you do that.");
-		System.out.println("[probably many years later]");
+		System.out.println("* And, since the one who created this was forced by hogan buckins for the MC to fall into an ice cube with like a pond with a 2ft diameter, you do that.");
 		System.out.println("P R O L O U G U E   C O M P L E T E");
-		System.out.println("* Always remember that after a chapter is complete, type anything to go on to the next chapter.");
+		
+		System.out.println("* Type something to continue.");
 		String nextChapter = scan.next();
 		System.out.println("Continuing to next chapter.");
+		
 		for(int c=0;c<10;c++) {
 			System.out.println();
 		}
-		
+		System.out.println("[probably many years later]");
+		System.out.println("* You open your eyes. You see someone. You don't know who he is because he is someone.");
+		System.out.println("* You try to make conversation. What should you say? (* Use the number.)");
+		System.out.println("[Who are you?](1) [Just 5 more minutes?](2)");
+		int interaction1 = scan.nextInt();
+		while(true) {
+			if(interaction1 == 1) {
+				int convoStart1 = rand.nextInt(2);
+				if(convoStart1 == 0) {
+					System.out.println("* He yells back 'Who are you?'. Huh. Weird.");
+				}
+				if(convoStart1 == 1) {
+					System.out.println("* He introduces himself as 'Logan'. You introduce yourself as well. That was easy.");
+				}
+			}
+			else if(interaction1 == 2) {
+				int convoStart2 = rand.nextInt(2);
+				if(convoStart2 == 0) {
+					System.out.println("* Whoever that someone is, they're kinda mean, because he/she just slapped you and said 'Y O U   I M B E C I L E'");
+					System.out.println("* Ow. That hurt. You lose 1 HP.");
+					HP--;
+					if(HP == 0) {
+						System.out.println("game over. also how do you die from that lol");
+						System.exit(0);
+					}
+				}
+				else if(convoStart2 == 1) {
+					System.out.println("* Your vision clears and you see some guy making the neutral face of displeasure, and says, 'bruh seriously'");
+				}
+			} else {
+				System.out.println("* Invalid. Remember to use the number!");
+				continue;
+			}
+			break;
+		}
+		System.out.println("* Anyways, after that introduction, you decide to sit down and talk.");
+		while(true) {
+			System.out.println("[Where are we?](1) [How did you get here?](2)");
+			int convoBody1 = scan.nextInt();
+			if(convoBody1 == 1) {
+				System.out.println("* Even though you know that this is a cave, you ask where you are.");
+				System.out.println("* So apparently, you're in a cave.");
+			}
+			else if(convoBody1 == 2) {
+				System.out.println("* He says he fell, and the water broke his fall, even though water tension should've technically killed him.");
+			}
+			else {
+				System.out.println("* Invalid. Remember to use the number!");
+				continue;
+			}
+			System.out.println("* You feel like you should ask the other question if you haven't already. Would you like to do so?");
+			String otherQuestion1 = scan.next();
+			if(otherQuestion1.equalsIgnoreCase("Yes")) {
+				continue;
+			}
+			else if(otherQuestion1.equalsIgnoreCase("No")) {
+				break;
+			}
+			else {
+				System.out.println("* Interpreting vague answer as 'yes'.");
+				continue;
+			}
+		}
+		System.out.println("* After a little bit, you decide to try and go outside.");
+		System.out.println("* Oh wait. You're in a cave. You can't.");
+		while(true) {
+			System.out.println("Which method would you like to try?");
+			System.out.println("[UP](1) [FORWARD](2)");
+			int methodOut = scan.nextInt();
+			if(methodOut == 1) {
+				System.out.println("* ");
+			}
+			else if(methodOut == 2) {
+				System.out.println("* ");
+			}
+		}
 	}
 }
