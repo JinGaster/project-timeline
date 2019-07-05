@@ -278,20 +278,21 @@ public class rpgGame {
 				System.out.println("* 100% not fake,");
 				while(true) {
 					System.out.println("* ....pile of batteries. What do you create?");
-					System.out.println("[MAKESHIFT DRILL](1) [ICE PICK](2)"); //unfinished
+					System.out.println("[MAKESHIFT DRILL](1) [ELECTRIC PICK](2)"); //unfinished
 					int c2Tool = scan.nextInt();
 					if(c2Tool == 1) {
-						System.out.println("* You create a makeshift ladder.");
+						System.out.println("* You create a makeshift drill.");
 						
 					}
 					else if(c2Tool == 2) {
-						System.out.println("* You create an ice pick.");
+						System.out.println("* You create an electric pick.");
 						
 					}
 					else {
 						System.out.println("* Invalid. Remember to use the number!");
 						continue;
 					}
+				}
 			}
 			break;
 		}
