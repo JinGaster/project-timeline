@@ -210,11 +210,13 @@ public class rpgGame {
 			System.out.println("[UP](1) [FORWARD](2)");
 			int methodOut = scan.nextInt();
 			if(methodOut == 1) {
-				System.out.println("* ");
+				System.out.println("* You start digging up.");
 			}
 			else if(methodOut == 2) {
-				System.out.println("* ");
+				System.out.println("* You start digging forward.");
 			}
+			System.out.println("[Logan has left the game.] (frick you Java, I'm going back to Python -hogan)");
+			
 		}
 	}
 }
