@@ -4,7 +4,7 @@ public class shoppingList2{
     public static void main(String[] args){
         Scanner scan = new Scanner(System.in);
         ArrayList < String > list = new ArrayList < String > ();
-        System.out.println("Welcome to the shop.");
+        System.out.println("Welcome to the MORE Store [MK II].");
         while(true){
             System.out.println("State if you want to add, remove, or view items from your shopping list. You may also exit when you're done.");
             String choice = scan.nextLine();
@@ -18,17 +18,7 @@ public class shoppingList2{
             else if(choice.equalsIgnoreCase("remove")){
                 System.out.println("State an item that you would like to remove. You may use the item name (must be case sensitive).");
                 String removeChoice = scan.nextLine();
-                //for(int x=0; x<list.length(); x++){
-                    //if(list is equal to remove){
-                        //remove that
-                    //}
-                    //else{
-                        //go on to next thing
-                    //}
-                //}
-                //aaaaaaaaaaaaa
-                System.out.println("You are now removing "+removeChoice+".");
-                //how to detect if what you remove is not on the shopping list in the first place?
+                System.out.println("You are now removing "+removeChoice+", assuming that you had that in your shopping list.");
                 list.remove(removeChoice);
                 continue;
             }
