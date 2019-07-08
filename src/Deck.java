@@ -21,8 +21,10 @@ public class Deck{
     public void shuffle(){
         Random rand = new Random();
         for(int y=0;y<52;y++){
-            int r = rand.nextInt();
-
+            int r = rand.nextInt(52-y)+y;
+            Card temp = deck[r];
+            deck[r] = deck[y];
+            deck[y] = temp;
         }
     }
 }
