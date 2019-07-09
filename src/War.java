@@ -8,6 +8,7 @@ public class War{
         //for(int x=0;x<52;x++){
         //    System.out.println(cardDeck.getDeck()[x]);
         //}
+        //Shuffled Cards ^^^
         ArrayList < Card > p1 = new ArrayList < Card > ();
         ArrayList < Card > p2 = new ArrayList < Card > ();
         ArrayList < Card > table = new ArrayList < Card > ();
@@ -17,31 +18,87 @@ public class War{
         }
         //System.out.println(p1);
         //System.out.println(p2);
-        System.out.println("The cards have been dealt to both people. Press ENTER to start the round.");
+        //Deck split in half to both players ^^^
+        System.out.println("26 cards have been dealt to both people. Press ENTER to start the round.");
         scan.nextLine();
-        System.out.println("3, 2, 1, War!");
-        table.add(p1.get(0));
-        table.add(p2.get(0));
-        //System.out.println(p1);
-        //System.out.println(p2);
-        System.out.println("p1 put down the "+p1.get(0)+", while p2 put down the "+p2.get(0)+".");
-        if(p1.getValue() == p2.getValue()){
-            System.out.println("w   a   r.");
+        while(true){
+            System.out.println("3, 2, 1, War!");
+            table.add(p1.get(0));
+            table.add(p2.get(0));
+            //System.out.println(p1);
+            //System.out.println(p2);
+            //Deck split in half to both players ^^^
+            System.out.println("P1 put down the "+p1.get(0)+", while P2 put down the "+p2.get(0)+".");
+            if(p1.get(0).getValue() == p2.get(0).getValue()){
+                p1.remove(0);
+                p2.remove(0);
+                System.out.println("Both card values are the same, this means war!");
+                if(p1.size() > 3){
+                    for(int b=0;b<3;b++){
+                        table.add(p1.get(0));
+                    }
+                    System.out.println("P1 has put 3 cards on the table, face down.");
+                }
+                else{
+                    for(int c=0;c<(3-p1.size());c++){
+                        table.add(p1.get(0));
+                    }
+                    System.out.println("P1 has put "+(3-p1.size())+" cards on the table, face down.");
+                }
+                if(p2.size() > 3){
+                    for(int d=0;d<3;d++){
+                        table.add(p2.get(0));
+                    }
+                    System.out.println("P2 has put 3 cards on the table, face down. Press ENTER to start next round.");
+                    scan.nextLine();
+                    continue;
+                }
+                else{
+                    for(int e=0;e<(3-p2.size());e++){
+                        table.add(p2.get(0));
+                    }
+                    System.out.println("P2 has put "+(3-p2.size())+" cards on the table, face down. Press ENTER to start next round.");
+                    scan.nextLine();
+                    continue;
+                }
+            }
+            else if(p1.get(0).getValue() > p2.get(0).getValue()){
+                System.out.println("P1's card value is greater, he gets the cards!");
+                for(int y=0; y<table.size(); y++){
+                    p1.add(table.get(0));
+                    table.remove(0);
+                    //p1.remove(0);
+                    p2.remove(0);
+                }
+            }
+            else if(p1.get(0).getValue() < p2.get(0).getValue()){
+                System.out.println("P2's card value is greater, he gets the cards!");
+                for(int z=0; z<table.size(); z++){
+                    p2.add(table.get(0));
+                    table.remove(0);
+                    p1.remove(0);
+                    //p2.remove(0);
+                }
+            }
+            //p1.remove(0);
+            //p2.remove(0);
+            //System.out.println(p1);
+            //System.out.println(p2);
+            if(p2.size() == 0){
+                System.out.println("Game over! P1 wins.");
+                break;
+            }
+            else if(p1.size() == 0){
+                System.out.println("Game over! P2 wins.");
+                break;
+            }
+            else{
+                System.out.println("P1 has "+p1.size()+" cards left, while P2 has "+p2.size()+" cards left.");
+                System.out.println("Round complete. Press ENTER to move on.");
+                scan.nextLine();
+                continue;
+            }
         }
-        else if()
-        p1.remove(0);
-        p2.remove(0);
-
-
-        //if(p1 value card == p2 value card){
-        //  WAR part goes here
-        //}
-        //else if(p1 has higher value){
-        //  p1 gets the cards
-        //}
-        //else if(p2 has higher value){
-        //  p2 gets the cards
-        //}
-        
+        scan.close();
     }
 }
