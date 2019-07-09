@@ -36,18 +36,21 @@ public class War{
                 if(p1.size() > 3){
                     for(int b=0;b<3;b++){
                         table.add(p1.get(0));
+                        p1.remove(0);
                     }
                     System.out.println("P1 has put 3 cards on the table, face down.");
                 }
                 else{
                     for(int c=0;c<(3-p1.size());c++){
                         table.add(p1.get(0));
+                        p1.remove(0);
                     }
-                    System.out.println("P1 has put "+(3-p1.size())+" cards on the table, face down.");
+                    System.out.println("P1 has put "+(3 - p1.size())+" cards on the table, face down.");
                 }
                 if(p2.size() > 3){
                     for(int d=0;d<3;d++){
                         table.add(p2.get(0));
+                        p2.remove(0);
                     }
                     System.out.println("P2 has put 3 cards on the table, face down. Press ENTER to start next round.");
                     scan.nextLine();
@@ -56,44 +59,53 @@ public class War{
                 else{
                     for(int e=0;e<(3-p2.size());e++){
                         table.add(p2.get(0));
+                        p2.remove(0);
                     }
-                    System.out.println("P2 has put "+(3-p2.size())+" cards on the table, face down. Press ENTER to start next round.");
+                    System.out.println("P2 has put "+(3 - p2.size())+" cards on the table, face down. Press ENTER to start next round.");
                     scan.nextLine();
                     continue;
                 }
             }
             else if(p1.get(0).getValue() > p2.get(0).getValue()){
-                System.out.println("P1's card value is greater, he gets the cards!");
+                System.out.println("P1's card value is greater, they get the cards!");
                 for(int y=0; y<table.size(); y++){
                     p1.add(table.get(0));
                     table.remove(0);
                     //p1.remove(0);
                     p2.remove(0);
+                    if(p2.size() <= 0){
+                        System.out.println("Game over! P1 wins.");
+                        break;
+                    }
                 }
+                p1.remove(0);
+                p1.add(table.get(0));
+                table.remove(0);
             }
             else if(p1.get(0).getValue() < p2.get(0).getValue()){
-                System.out.println("P2's card value is greater, he gets the cards!");
+                System.out.println("P2's card value is greater, they get the cards!");
                 for(int z=0; z<table.size(); z++){
                     p2.add(table.get(0));
                     table.remove(0);
                     p1.remove(0);
+                    if(p1.size() <= 0){
+                        System.out.println("Game over! P2 wins.");
+                        break;
                     //p2.remove(0);
+                    }
                 }
+                p2.remove(0);
+                p2.add(table.get(0));
+                table.remove(0);
             }
-            //p1.remove(0);
-            //p2.remove(0);
+            System.out.println("P1 has "+p1.size()+" cards left, while P2 has "+p2.size()+" cards left. There are also "+table.size()+" cards on the table.");
             //System.out.println(p1);
             //System.out.println(p2);
-            if(p2.size() == 0){
-                System.out.println("Game over! P1 wins.");
-                break;
-            }
-            else if(p1.size() == 0){
-                System.out.println("Game over! P2 wins.");
+            //System.out.println(table);
+            if(p1.size() <= 0 || p2.size() <= 0){
                 break;
             }
             else{
-                System.out.println("P1 has "+p1.size()+" cards left, while P2 has "+p2.size()+" cards left.");
                 System.out.println("Round complete. Press ENTER to move on.");
                 scan.nextLine();
                 continue;
