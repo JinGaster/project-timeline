@@ -4,17 +4,15 @@ public class Blackjack{
     public static void main(String[] args){
         Scanner scan = new Scanner(System.in);
         Deck cardDeck = new Deck();
-        boolean abovePlayer = true;
-        int ace = 11;
-        int pValue = 0;
+        int aceValue = 11;
+        int pdValue = 0;
         boolean usedAces = false;
         cardDeck.shuffle();
+
         ArrayList < Card > player = new ArrayList < Card > ();
         ArrayList < Card > dealer = new ArrayList < Card > ();
         ArrayList < Card > table = new ArrayList < Card > ();
 
-        //make a table with all 52, then pass out cards
-        
         for(int x=0; x<52; x++){
             table.add(cardDeck.getDeck()[x]);
         }
@@ -37,29 +35,30 @@ public class Blackjack{
         System.out.println(player);
         System.out.print("And this is one of the dealer's cards: ");
         System.out.println(dealer.get(0));
+
         while(true){
-            pValue = 0;
-            pValue = checkPlayer(player, abovePlayer, cardDeck, pValue, ace, usedAces);
-            if(pValue > 21){
+            pdValue = 0;
+            pdValue = checkPlayer(player, cardDeck, pdValue, aceValue, usedAces);
+            if(pdValue > 21){
                 if(usedAces == false){
-                    ace = 1;
+                    aceValue = 1;
                     usedAces = true;
                     continue;
                 }
                 else if(usedAces == true){
                     System.out.println("You have gone over 21. It is now the dealer's turn.");
-                    System.out.print("These were your cards: ");
-                    System.out.println(player);
-                    break; //(used to stop program, will delete later)
+                    usedAces = false;
+                    aceValue = 11;
+                    break;
                 }
                 else{
                     System.out.println("You have gone over 21. It is now the dealer's turn.");
-                    System.out.print("These were your cards: ");
-                    System.out.println(player);
-                    break; // ^^^
+                    usedAces = false;
+                    aceValue = 11;
+                    break;
                 }
             }
-            System.out.println("Your value is "+pValue+".");
+            System.out.println("Your value is "+pdValue+".");
             
             System.out.println("Would you like to hit or stay?");
             String pChoice = scan.next();
@@ -73,15 +72,12 @@ public class Blackjack{
                 continue;
             }
             else if(pChoice.equalsIgnoreCase("stay")){
-                System.out.println("You have decided to stay.");
+                System.out.println("You have decided to stay with a value of "+pdValue+".");
                 System.out.println();
-                //add up that score (?)
-                //remove those cards in your hand
-                //get 3 new cards, and go again.
                 usedAces = false;
-                ace = 11;
-                break;
-                //continue;
+                aceValue = 11;
+                scan.close();
+                System.exit(0);
             }
             else{
                 System.out.println("That is not a valid input.");
@@ -89,23 +85,78 @@ public class Blackjack{
                 continue;
             }
         }
+
+        System.out.println("The dealer reveals their other card to be the "+dealer.get(1)+""); //dealers must hit when below 17. They stay when they're at or above 17.
+
+        while(true){
+            System.out.println("This is the dealer's hand: ");
+            System.out.println(dealer);
+            pdValue = checkDealer(dealer, cardDeck, pdValue, aceValue, usedAces);
+            System.out.println();
+            System.out.println("Press ENTER to continue.");
+            scan.nextLine();
+            if(pdValue < 17){
+                System.out.println("The dealer has a value below 17. This means he must hit.");
+                dealer.add(table.get(0));
+                table.remove(0);
+                System.out.println("Press ENTER to continue.");
+                scan.nextLine();
+                System.out.println();
+                continue;
+            }
+            else if(pdValue >= 17 && pdValue <= 21){
+                System.out.println("The dealer has decided to stay with a value of "+pdValue+".");
+                usedAces = false;
+                aceValue = 11;
+                break;
+            }
+            else if(pdValue > 21){
+                System.out.println("The dealer has gone over 21, which means it's the player's turn.");
+                System.out.print("These were the dealer's cards: ");
+                System.out.println(dealer);
+                usedAces = false;
+                aceValue = 11;
+                break;
+            }
+        }
+
+        System.out.println();
+        System.out.println("Thanks for playing.");
+        System.out.println();
         scan.close();
     }
 
-    public static int checkPlayer(ArrayList < Card > player, boolean abovePlayer, Deck cardDeck, int pValue, int ace, boolean usedAces){
+    public static int checkPlayer(ArrayList < Card > player, Deck cardDeck, int pdValue, int aceValue, boolean usedAces){
         for(int a=0; a<player.size(); a++){
-            if(player.get(a).getValue() >= 10 && player.get(a).getValue() < 14){ //(method .getValue() is undefined)
+            if(player.get(a).getValue() >= 10 && player.get(a).getValue() < 14){
                 //jacks, queens, kings are all 10, aces are 11.
-                pValue += 10;
+                pdValue += 10;
             }
             else if(player.get(a).getValue() == 14){
                 usedAces = true;
-                pValue += ace; //if the player goes over 21, if there's an ace, the value goes from 11 to 1.
+                pdValue += aceValue;
             }
             else{
-                pValue += player.get(a).getValue(); //returns the value of the card. simple.
+                pdValue += player.get(a).getValue();
             }
         }
-        return pValue;
+        return pdValue;
+    }
+
+    public static int checkDealer(ArrayList < Card > dealer, Deck cardDeck, int pdValue, int aceValue, boolean usedAces){
+        pdValue = 0;
+        for(int c=0; c<dealer.size(); c++){
+            if(dealer.get(c).getValue() >= 10 && dealer.get(c).getValue() < 14){
+                pdValue += 10;
+            }
+            else if(dealer.get(c).getValue() == 14){
+                usedAces = true;
+                pdValue += aceValue;
+            }
+            else{
+                pdValue += dealer.get(c).getValue();
+            }
+        }
+        return pdValue;
     }
 }
