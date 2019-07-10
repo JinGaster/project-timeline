@@ -47,12 +47,14 @@ public class Blackjack{
                 }
                 else if(usedAces == true){
                     System.out.println("You have gone over 21. It is now the dealer's turn.");
+                    System.out.println();
                     usedAces = false;
                     aceValue = 11;
                     break;
                 }
                 else{
                     System.out.println("You have gone over 21. It is now the dealer's turn.");
+                    System.out.println();
                     usedAces = false;
                     aceValue = 11;
                     break;
@@ -92,9 +94,9 @@ public class Blackjack{
             System.out.println("This is the dealer's hand: ");
             System.out.println(dealer);
             pdValue = checkDealer(dealer, cardDeck, pdValue, aceValue, usedAces);
-            System.out.println();
             System.out.println("Press ENTER to continue.");
             scan.nextLine();
+            System.out.println();
             if(pdValue < 17){
                 System.out.println("The dealer has a value below 17. This means he must hit.");
                 dealer.add(table.get(0));
@@ -111,12 +113,27 @@ public class Blackjack{
                 break;
             }
             else if(pdValue > 21){
-                System.out.println("The dealer has gone over 21, which means it's the player's turn.");
-                System.out.print("These were the dealer's cards: ");
-                System.out.println(dealer);
-                usedAces = false;
-                aceValue = 11;
-                break;
+                if(usedAces == false){
+                    aceValue = 1;
+                    usedAces = true;
+                    continue;
+                }
+                else if(usedAces == true){
+                    System.out.println("The dealer has gone over 21, which means game over.");
+                    System.out.print("These were the dealer's cards: ");
+                    System.out.println(dealer);
+                    usedAces = false;
+                    aceValue = 11;
+                    break;
+                }
+                else{
+                    System.out.println("The dealer has gone over 21, which means game over.");
+                    System.out.print("These were the dealer's cards: ");
+                    System.out.println(dealer);
+                    usedAces = false;
+                    aceValue = 11;
+                    break;
+                }
             }
         }
 
