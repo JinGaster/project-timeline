@@ -14,6 +14,6 @@ public class Shape{
     }
 
     public String toString(){
-        return "This polygon has " +this.sides+ " many sides, and so, the interior angles of this shape add up to " +getAngle()+ ".";
+        return "This polygon has " +this.sides+ " sides, and so, the interior angles of this shape add up to " +getAngle()+ ".";
     }
 }
