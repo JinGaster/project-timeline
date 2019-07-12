@@ -14,7 +14,7 @@ public class SortingFull{
         System.out.println();
         System.out.println();
 
-        numList = insertionSort(numList);
+        numList = bogoSort(numList);
 
         System.out.println("S O R T E D   L I S T");
         for(int y=0; y<numList.length; y++){
@@ -69,10 +69,46 @@ public class SortingFull{
                 int temp = numList[d-f-1];
                 numList[d-f-1] = numList[d-f];
                 numList[d-f] = temp;
-                f--;
+                f++;
             }
         }
         System.out.println();
+        return numList;
+    }
+
+    public static void shuffle(int[] numList){
+        Random rand = new Random();
+        for(int h=0;h<numList.length; h++){
+            int r = rand.nextInt(numList.length);
+            int temp = numList[r];
+            numList[r] = numList[h];
+            numList[h] = temp;
+        }
+    }
+
+    public static int[] bogoSort(int[] numList){
+        //randomizes a set of numbers and if it isn't sorted, repeat.
+        int count = 0;
+        boolean sorted = false;
+        while(sorted == false){
+            sorted = true;
+            for(int i=0; i<numList.length; i++){
+                System.out.print(numList[i]);
+                System.out.print(", ");
+            }
+            System.out.println();
+            for(int g=0; g<(numList.length-1); g++){
+                if(numList[g] > numList[g+1]){
+                    sorted = false;
+                }
+            }
+            if(sorted == false){
+                shuffle(numList);
+                count++;
+            }
+        }
+        System.out.println();
+        System.out.println("This list had to be shuffled " +count+ " times to sort it.");
         return numList;
     }
 }
