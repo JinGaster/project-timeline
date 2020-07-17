@@ -1,4 +1,4 @@
-public class testing{
+public class testingCard{
     public static void main(String[] args){
      //   Card testing = new Card("Clubs", 1);
      //   System.out.println(testing);

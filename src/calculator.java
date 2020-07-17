@@ -4,6 +4,7 @@ public class calculator {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		Scanner scan = new Scanner(System.in);
+		//System.out.print(scan);
 		boolean calc = true;
 		while(calc == true) {
 			System.out.println("Insert your first number, the operation, then the second number.");

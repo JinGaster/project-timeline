@@ -1,5 +1,5 @@
-public class Square extends Rectangle{
-    public Square(double side){
+public class square extends Rectangle{
+    public square(double side){
         super(side, side);
     }
     public double getSide(){

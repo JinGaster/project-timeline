@@ -4,6 +4,7 @@ public class Blackjack{
     public static void main(String[] args){
         Scanner scan = new Scanner(System.in);
         Deck cardDeck = new Deck();
+        //System.out.print(cardDeck);
         int aceValue = 11;
         int pdValue = 0;
         boolean usedAces = false;

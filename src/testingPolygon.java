@@ -2,7 +2,7 @@ public class testingPolygon{
     public static void main(String[] args){
         Rectangle testing1 = new Rectangle(4,2);
         Shape testing2 = new Shape(10);
-        Square testing3 = new Square(6);
+        square testing3 = new square(6);
         System.out.println();
 
         System.out.println("R E C T A N G L E");

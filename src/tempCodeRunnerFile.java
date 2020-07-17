@@ -1,1 +1,1 @@
-scan.nextLine();
+//scan.nextLine();
