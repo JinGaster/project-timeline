@@ -18,6 +18,7 @@ public class recursionTest {
 		//System.out.println(recursion_4.recursiveFibbonaci(1));
 		//System.out.println(recursion_4.recursiveFibbonaci(5));
 		//System.out.println(recursion_4.recursiveFibbonaci(10));
+		//System.out.println(recursion_4.recursiveFibbonaci(45));
 		
 		//recursion recursion_5 = new recursion();
 		//System.out.println(recursion_5.recursiveTowers(3));
@@ -28,11 +29,10 @@ public class recursionTest {
 		//System.out.println();
 		//System.out.println(recursion_5.recursiveTowers(31));
 		
-		epicFortnortTowers recursion_6 = new epicFortnortTowers();
+		//towers recursion_6 = new towers();
 		//recursion_6.recursiveTowers_2(3, 1, 3, 3, false, false);
 		//recursiveTowers_2(disks, tower_1, tower_2, temptwo, nonSmallMoveDirection, switchReturn);
 		//when changing disks, also change temptwo
-		recursion_6.recursiveTowers_2(4, 1, 3, 4, false, false);
-		//a
+		//recursion_6.recursiveTowers_2(4, 1, 3, 4, false, false);
 	}
 }

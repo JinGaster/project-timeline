@@ -1,5 +1,5 @@
 
-public class sdfsdfsdfTowerOfHanoi {
+public class towerofhanoipast {
 	public int recursiveTowers_2(int disks, int tower_1, int tower_2, int tempone, int smallPosition, int temptwo, boolean nonSmallMoveDirection, boolean smallMove, boolean oddReturn) {
 		//disks state how many disks on the first tower
 		//tower_1 and tower_2 describe where the disk is from, and where it should be placed
@@ -128,7 +128,6 @@ public class sdfsdfsdfTowerOfHanoi {
 			}
 			//booleans are good for now
 			//REMEMBER TO SET BOOLEANS TO THEMSELVES INSTEAD OF ACCIDENTALLY SETTING THEM TO OPPOSITE VALUE
-			//ok done, now to do the rest of this
 		}
 		//code below is alright (for now, will need to edit oddReturn)
 		else {
@@ -179,5 +178,3 @@ public class sdfsdfsdfTowerOfHanoi {
 		return recursiveTowers(disks - 1) + 1 + recursiveTowers(disks - 1);
 	}
 }*/
-
-//bruh moment

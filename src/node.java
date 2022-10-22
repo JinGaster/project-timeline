@@ -1,29 +1,27 @@
 
-public class node {
-	private int data;
+public class node<E> {
+	private E data;
 	//default is 0, data stored as number
-	private node nextNode;
+	private node<E> nextNode;
 	//default is null, data stored as string
-	public node(node n, int d){
+	public node(node<E> n, E d){
         this.data = d;
         this.nextNode = n;
     }
 	//constructor
-	public node getNextNode(){
+	public node<E> getNextNode(){
         return nextNode;
     }
-    public int getData(){
+    public E getData(){
         return data;
     }
     //getters
     
-    //woah man you do comments really well, good job
-    //thanks man, you too
     
-    public void setData(int d){
-        data = 0;
+    public void setData(E d){
+        data = d;
     }
-    public void setNextNode(node n){
+    public void setNextNode(node<E> n){
         nextNode = n;
     }
    //setters

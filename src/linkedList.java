@@ -1,11 +1,10 @@
 
-public class linkedList {
+public class linkedList<E> {
 	private int size = 1;
-	private node head;
-	public linkedList(int d) {
-		head = new node(null, d);
+	private node<E> head;
+	public linkedList(E d) {
+		head = new node<E>(null, d);
 	}
-	
 	
 	//first use a constructor to define your linkedList, where you set head as int d and nextNode null (done)
 	
@@ -21,17 +20,14 @@ public class linkedList {
 	//print the linked list (done)
 	//-make a temptwo such that it can read the list along with each of the nodes' data values and their next nodes
 	//print out the list
-	//profit
 	
-	//also do a buncha other stuff like addPosition and removePosition
-	//- but i'm too lazy to scroll up here every single time, so i might as well record those
-	//  comments at the actual function area
+	//also addPosition and removePosition
 	
-	private node nodeEnd;
-	public void add(int data) {
-		node tempthree;
+	private node<E> nodeEnd;
+	public void add(E data) {
+		node<E> tempthree;
 		tempthree = head;
-		nodeEnd = new node(null, data);
+		nodeEnd = new node<E>(null, data);
 		if(size==1) {
 			//tempthree = head.getNextNode();
 			//nodeEnd = tempthree;
@@ -41,7 +37,7 @@ public class linkedList {
 			while(tempthree.getNextNode() != null){
 				//tempthree.setNextNode(head.getNextNode());
 				//make tempthree cycle through the other nodes
-				//tempthree.setNextNode(tempthree); <<< BAD LINE OF CODE
+				//tempthree.setNextNode(tempthree);
 				tempthree = tempthree.getNextNode();
 			}
 			//System.out.println(tempthree.getData());
@@ -56,7 +52,7 @@ public class linkedList {
 	//adding nodes to the end of the list
 	
 	public void remove(int data) {
-		node tempfour;
+		node<E> tempfour;
 		tempfour = head;
 		nodeEnd = null;
 		while(tempfour.getNextNode() != null) {
@@ -73,7 +69,7 @@ public class linkedList {
 	
 	public String toString() {
 		String temp = "";
-		node temptwo;
+		node<E> temptwo;
 		temptwo = head;
 		int check = 0;
 		while(temptwo.getNextNode() != null) {
@@ -85,12 +81,12 @@ public class linkedList {
 		}
 		//System.out.println("linkedList");
 		return temp;
-		//while this check thingy is within the node list, convert it to better, more comprehensible information
+		//while this check is within the node list, convert it to better, more comprehensible information
 		//use temp to do this
 	}
 	
-	public void addPosition(int data, int position) {
-		node tempfive;
+	public void addPosition(E data, int position) {
+		node<E> tempfive;
 		tempfive = head;
 		
 		if(position > size) {
@@ -103,10 +99,8 @@ public class linkedList {
 			for(int ap = 1; ap < position; ap++) {
 				tempfive = tempfive.getNextNode();
 			}
-			node added_node = new node(tempfive.getNextNode(), data);
+			node<E> added_node = new node<E>(tempfive.getNextNode(), data);
 			//add the node in this position
-			//ok but what if the new node's position is like 99999999999999999?
-			//hmmmmmm
 			tempfive.setNextNode(added_node);
 			
 			//now set the previous node's next node as added_node
@@ -117,18 +111,16 @@ public class linkedList {
 			//this makes tempfive go to the previous node of added_node
 			//now set the previous node's next node as added_node
 			//how to set the nextNode of a node that can't be interacted
-			//oh wait temp is already at the right location lol
 		}
 		//while(tempfive.getNextNode() != /*the position of ap*/) {
 		//	tempfive = tempfive.getNextNode();
 		//	ap++;
 		//}
-		//this is incorrect code bruh
 	}
 	//allows the user to add a node to a certain position, with a certain data value
 	
 	public void removePosition(int position) {
-		node tempsix;
+		node<E> tempsix;
 		tempsix = head;
 		if(position > size) {
 			System.out.println("That position exceeds the size of the list. Returning previous list.");
@@ -151,7 +143,6 @@ public class linkedList {
 			//	tempsix = tempsix.getNextNode();
 			//	rp++;
 			//}
-			//this is incorrect code bruh
 		}
 	}
 	//allows the user to remove a node from a certain position, with a certain data value

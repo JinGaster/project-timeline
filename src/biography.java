@@ -1,13 +1,13 @@
 
 public class biography {
 	public static void main(String[] args) {
-		String name = "Chritian";
-		int birthday = 3;
-		String school = "Roslyndle School";
-		String game = "An Birds";
+		String name = "Christian";
+		int birthday = 23;
+		String school = "Roslyn School";
+		String game = "Angry Birds";
 		int year = 5;
-		String language = "Jva";
-		String friend = "Lhan";
+		String language = "Java";
+		String friend = "Logan";
 		System.out.println("Hello, my name is "+name+". I am 13 years old.");
 		System.out.println("My birthday is August "+birthday+".");
 		System.out.println("I go to "+school+" and my favorite hobbies are video games.");

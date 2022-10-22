@@ -2,7 +2,6 @@ import java.util.ArrayList;
 public class stack {
 	private ArrayList < Integer > epicStack = new ArrayList < Integer > ();
 	public stack() {
-		//aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
 	}
 	public void add(int data) {
 		epicStack.add(data);

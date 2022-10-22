@@ -1,8 +1,8 @@
 
-public class epicFortnortTowers {
+public class TempTowers {
 	private int smallPosition = 3;
 	public void recursiveTowers_2(int disks, int tower_1, int tower_2, int temptwo, boolean nonSmallMoveDirection, boolean switchReturn) {
-		//helo future me; this is the organizing room where i organize towers of hanoi: java edition
+		//organizing room
 		
 		if(temptwo == 1) {
 			tower_1 = smallPosition;
@@ -95,7 +95,7 @@ public class epicFortnortTowers {
 			//to do: first time move to 2nd tower, next time to the 3rd
 		}
 
-		//old code lol
+		//old code
 		//temptwo = disks;
 		//if(disks % 2 == 1) {
 		//	oddReturn = true;
@@ -110,8 +110,5 @@ public class epicFortnortTowers {
 		//else {
 		//	return recursiveTowers_2(disks, tower_1, tower_2 /*2*/, tempone, smallPosition, temptwo - 1, nonSmallMoveDirection, smallMove, true);
 		//}
-		
-		//bruh did you just do 4 /'s on line 106
-		//yeah man just deal with it
 	}
 }

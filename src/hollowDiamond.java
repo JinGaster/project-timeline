@@ -34,4 +34,3 @@ public class hollowDiamond {
 		System.out.print("X");
 	}
 }
-//9 to 7 

@@ -1,7 +1,7 @@
 
 public class linkedListTest {
 	public static void main(String[] args) {
-		linkedList listoflink = new linkedList(0);
+		linkedList<Integer> listoflink = new linkedList<Integer>(0);
 		//making a new linked list
 		
 		for(int x=1; x<=11; x++) {
@@ -25,4 +25,4 @@ public class linkedListTest {
 		//removing a node at a certain position
 	}
 }
-//be aware the node values start at 0, lol
+//be aware the node values start at 0
