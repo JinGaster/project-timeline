@@ -1,5 +1,6 @@
 public class square extends Rectangle{
     public square(double side){
+    	// calls its extended function, i.e rectangle constructor
         super(side, side);
     }
     public double getSide(){

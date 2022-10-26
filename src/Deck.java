@@ -18,6 +18,7 @@ public class Deck{
     public Card[] getDeck(){
         return deck;
     }
+    //uses random method to (hopefully) swap every card into a different place
     public void shuffle(){
         Random rand = new Random();
         for(int y=0;y<52;y++){

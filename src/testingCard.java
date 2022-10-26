@@ -7,6 +7,7 @@ public class testingCard{
      //  testing.setSuit("Spades");
       //  System.out.println(testing);
     //}
+    	// card testing class
         System.out.println("U N S H U F F L E D   V E R S I O N");
         Deck testDeck = new Deck();
         for(int x = 0; x<52;x++){

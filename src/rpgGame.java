@@ -4,6 +4,7 @@ public class rpgGame {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
+		// text-based rpg! unfinished though...
 		Scanner scan = new Scanner(System.in);
 		Random rand = new Random();
 		String[] inv = new String[10];

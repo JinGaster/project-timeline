@@ -27,7 +27,7 @@ public class calculator {
 				System.out.println(first/second);
 			}
 			else {
-				System.out.println("Operation is not valid.");
+				System.out.println("Operation is not valid!");
 			}
 		}
 		scan.close();

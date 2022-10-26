@@ -30,6 +30,7 @@ public class Blackjack{
         //System.out.println(player);
         //System.out.println(dealer);
         //System.out.println(cardDeck);
+        //System.out.println("check complete");
 
         System.out.println();
         System.out.print("Welcome to Blackjack. These are your cards: ");

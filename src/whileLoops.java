@@ -8,7 +8,7 @@ public class whileLoops {
 		while(variable1) {
 			System.out.println(A);
 			A++;
-			if(A == 1000000) {
+			if(A == 100000) {
 				variable1 = false;
 			}
 		}

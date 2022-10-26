@@ -2,6 +2,7 @@
 public class hollowDiamond {
 
 	public static void main(String[] args) {
+		// generates a hollow diamond
 		// TODO Auto-generated method stub
 		for(int a = 0; a < 5; a++) {
 			System.out.print(" ");

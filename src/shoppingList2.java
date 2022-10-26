@@ -2,6 +2,7 @@ import java.util.ArrayList;
 import java.util.Scanner;
 public class shoppingList2{
     public static void main(String[] args){
+    	// using arrayLists to make the shopping list better!
         Scanner scan = new Scanner(System.in);
         ArrayList < String > list = new ArrayList < String > ();
         System.out.println("Welcome to the MORE Store [MK II].");

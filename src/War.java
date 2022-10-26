@@ -2,6 +2,7 @@ import java.util.ArrayList;
 import java.util.Scanner;
 public class War{
     public static void main(String[] args){
+    	// there seems to be a problem where if one player has -1 cards, the game crashes...
         Scanner scan = new Scanner(System.in);
         Deck cardDeck = new Deck();
         cardDeck.shuffle();

@@ -4,6 +4,7 @@ public class rockPaperScissors {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
+		// rps game using scanner
 		Scanner scan = new Scanner(System.in);
 		Random number = new Random();
 		boolean bool = true;

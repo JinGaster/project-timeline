@@ -1,4 +1,5 @@
 public class Rectangle extends Shape{
+	// a rectangle is a shape
     private double length;
     private double width;
     public Rectangle(double l, double w){

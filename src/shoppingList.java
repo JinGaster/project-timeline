@@ -33,6 +33,7 @@ public class shoppingList {
 					
 				}
 			}
+			// method .equalsIgnoreCase() ignores upper or lower case
 			else if(listChoice.equalsIgnoreCase("remove")) {
 				System.out.println("Use the number place to state an item to remove from your shopping list.");
 				int remove = scan.nextInt();

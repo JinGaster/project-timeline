@@ -24,6 +24,7 @@ public class Card{
         suit = s;
     }
     
+    //toString
     public String toString(){
         if(this.value == 11){
             return "Jack of "+ this.suit;

@@ -1,5 +1,6 @@
 import java.util.Random;
 public class SortingFull{
+	// more sorting methods
     public static void main(String[] args){
         int[] numList = new int[10];
         Random rand = new Random();

@@ -3,6 +3,7 @@ public class hollowTriangle {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
+		// generates a hollow triangle
 		for(int a = 0; a < 5; a++) {
 			System.out.print(" ");
 		}

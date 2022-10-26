@@ -18,7 +18,7 @@ public class conditions {
 		// }
 		String variable2 = "street";
 //		String variable3 = "Street";
-		if(variable2.equalsIgnoreCase("Street")) {
+		if(variable2.equalsIgnoreCase("STREET")) {
 			System.out.println(variable2);
 		}
 //		else {

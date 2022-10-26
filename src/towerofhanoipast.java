@@ -11,7 +11,6 @@ public class towerofhanoipast {
 		//the boolean oddReturn is related to moving one disk to the right/left, then the next group to the left/right.
 		//the boolean switchReturn makes it so the first time the disks move to the second pillar, then the next time, the third pillar.
 		
-		//weird code
 		if(disks % 2 == 1) {
 			//run odd commands
 			//i.e smallest disk moves left every other turn

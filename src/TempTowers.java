@@ -2,7 +2,7 @@
 public class TempTowers {
 	private int smallPosition = 3;
 	public void recursiveTowers_2(int disks, int tower_1, int tower_2, int temptwo, boolean nonSmallMoveDirection, boolean switchReturn) {
-		//organizing room
+		//organizing room, since recursion was just learned
 		
 		if(temptwo == 1) {
 			tower_1 = smallPosition;

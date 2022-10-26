@@ -2,6 +2,7 @@
 public class equilateralTriangle {
 
 	public static void main(String[] args) {
+		// prints an equilateral triangle
 		// TODO Auto-generated method stub
 		//		for(int a = 0; a < 10; a++) {
 		//			for(int x = 9; x > a; x--) {

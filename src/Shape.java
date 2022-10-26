@@ -6,6 +6,7 @@ public class Shape{
     public int getSides(){
         return sides;
     }
+    // interior angle formula
     public int getAngle(){
         return 180*(sides-2);
     }

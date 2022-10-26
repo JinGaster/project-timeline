@@ -3,6 +3,7 @@ public class quizGame {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
+		// generic quiz, testing out scanner
 		Scanner scan = new Scanner(System.in);
 		int correct = 0;
 		int incorrect = 0;

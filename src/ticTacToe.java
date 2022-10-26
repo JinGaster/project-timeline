@@ -4,6 +4,7 @@ public class ticTacToe {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
+		// TicTacToe board using 2D arrays
 		Scanner scan = new Scanner(System.in);
 		String[][] board = new String[3][3];
 		boolean keepGoing = true;

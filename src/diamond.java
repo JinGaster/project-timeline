@@ -2,6 +2,7 @@
 public class diamond {
 
 	public static void main(String[] args) {
+		// prints a diamond
 		// TODO Auto-generated method stub
 		for(int a = 0; a < 10; a++) {
 			for(int x = 9; x > a; x--) {

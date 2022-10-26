@@ -3,6 +3,7 @@ public class input {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
+		// scanner basics
 		Scanner scan = new Scanner(System.in);
 		System.out.print("Enter your name: ");
 		String name = scan.nextLine();

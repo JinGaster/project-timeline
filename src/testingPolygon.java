@@ -1,5 +1,6 @@
 public class testingPolygon{
     public static void main(String[] args){
+    	// polygon testing class, i.e rectangles, squares, etc.
         Rectangle testing1 = new Rectangle(4,2);
         Shape testing2 = new Shape(10);
         square testing3 = new square(6);

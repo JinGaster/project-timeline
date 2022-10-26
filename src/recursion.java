@@ -1,5 +1,7 @@
 
 public class recursion {
+	// calling methods within methods to create loops
+	// don't forget the base case!
 	public void forLoop(int start, int end, int increasingBy) {
 		if(start == end) {
 			System.out.println(start);

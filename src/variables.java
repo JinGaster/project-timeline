@@ -5,7 +5,7 @@ public class variables {
 		// TODO Auto-generated method stub
 		int age = 13;
 		System.out.println(age);
-		String name = "Christian";
+		String name = "Christian L";
 		System.out.println(name);
 	}
 

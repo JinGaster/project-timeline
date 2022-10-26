@@ -20,7 +20,8 @@ public class Sorting0{
             System.out.print(", ");
         }
     }
-
+    
+    // slow, but works
     public static int[] bubbleSort(int[] numList){
         for(int a=0; a<numList.length; a++){
             for(int z=0; z<(numList.length-1); z++){

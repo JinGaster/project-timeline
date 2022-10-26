@@ -12,7 +12,7 @@ public class guessingGame {
 		int number1 = number.nextInt(100);
 		while(bool == true) {		
 				if (guesses > 0) {
-					System.out.println("Try again! You have "+(10-guesses)+" guesses left.");
+					System.out.println("Try again! You have "+(10-guesses)+" guesses left!");
 				}
 				int first = scan.nextInt();
 				if(first == number1) {
